@@ -15,7 +15,7 @@
     </header>
 
     <!-- main part of the website -->
-    <main class="">
+    <main>
       <section class="grid grid-cols-2 gap-4 p-4">
         <div class="">
           <img class="w-2/4 ml-60" src="images/mac.png" alt="" />
@@ -23,7 +23,7 @@
         <div class="w-3/4">
           <div class="mb-8">
             <h1 class="text-3xl font-semibold mb-3">
-              Customice your Blue 24-inch <br />
+              Customize your Blue 24-inch <br />
               iMac with Apple M1 chip
             </h1>
             <p class="text-justify">
@@ -33,19 +33,23 @@
           </div>
           <div class="mb-8">
             <h2 class="font-semibold">Memory</h2>
-            <button class="border-2 p-1 rounded border-opacity-100">8GB unified memory</button>
-            <button class="border-2 p-1 rounded border-opacity-100">16GB unified memory</button>
+            <button onclick="memoryCost(0)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">8GB unified memory</button>
+            <button onclick="memoryCost(180)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">16GB unified memory</button>
           </div>
           <div class="mb-8">
             <h2 class="font-semibold">Storage</h2>
-            <button class="border-2 p-1 rounded border-opacity-100">256GB SSD Storage</button>
-            <button class="border-2 p-1 rounded border-opacity-100">512GB SSD Storage</button>
-            <button class="border-2 p-1 rounded border-opacity-100">1TB SSD Storage</button>
+            <button onclick="storageCost(0)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">256GB SSD Storage</button>
+            <button onclick="storageCost(100)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">512GB SSD Storage</button>
+            <button onclick="storageCost(180)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">1TB SSD Storage</button>
           </div>
           <div class="mb-8">
             <h2 class="font-semibold">Choose your delivery option</h2>
-            <button class="border-2 p-1 rounded border-opacity-100">August 25 FREE Prime delivery</button>
-            <button class="border-2 p-1 rounded border-opacity-100">August 21 delivery charge $20</button>
+            <button onclick="deliveryCharge(0)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">
+              August 25 FREE Prime delivery
+            </button>
+            <button onclick="deliveryCharge(20)" class="border-2 p-1 rounded border-opacity-100 hover:bg-gray-900 hover:text-white">
+              August 21 delivery charge $20
+            </button>
           </div>
           <div class="font-semibold grid grid-cols-2">
             <div class="grid gap-2">
@@ -61,17 +65,17 @@
               <hr />
             </div>
             <div class="grid gap-2">
-              <h2>$<span>1299</span></h2>
-              <h2>$<span>0</span></h2>
-              <h2>$<span>0</span></h2>
-              <h2>$<span>0</span></h2>
-              <h2>$<span>1299</span></h2>
+              <h2>$<span id="best-price">1299</span></h2>
+              <h2>$<span id="memory-cost">0</span></h2>
+              <h2>$<span id="storage-cost">0</span></h2>
+              <h2>$<span id="delivery-cost">0</span></h2>
+              <h2>$<span id="total-price">1299</span></h2>
             </div>
           </div>
           <div class="mt-6">
             <h2 class="font-semibold">Add Promo Code</h2>
-            <input type="text" class="rounded border-2 border-gray-700 px-5 py-1" />
-            <button class="border-2 bg-red-500 px-3 py-2 rounded-lg text-white">Apply</button>
+            <input id="promo-code" type="text" class="rounded border-2 border-gray-700 px-5 py-1" />
+            <button id="promo-codebtn" onclick="applyPromoCode()" class="border-2 bg-red-500 px-3 py-2 rounded-lg text-white">Apply</button>
           </div>
         </div>
       </section>
@@ -79,7 +83,7 @@
 
       <!-- final total part -->
       <section class="pb-10">
-        <h1 class="text-center text-2xl font-bold text-gray-800">Total: $<span>1299</span></h1>
+        <h1 class="text-center text-2xl font-bold text-gray-800">Total: $<span id="grand-total">1299</span></h1>
       </section>
     </main>
 
